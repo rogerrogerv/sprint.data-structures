@@ -18,7 +18,6 @@ class LinkedList {
       this.tail = this.head;
     } else {
       this.tail.next = box;
-      this.tail = box;
     }
 
     return (this.tail = box);
