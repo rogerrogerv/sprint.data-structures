@@ -4,9 +4,14 @@ class Tree {
     this.children = [];
   }
 
-  addChild(value) {}
+  addChild(value) {
+    //adds a child to tree/subtree and returns the new child node
+    //(which should be a tree instance)
+  }
 
-  contains(value) {}
+  contains(value) {
+    //return true if value is in tree, false if not
+  }
 
   /*
 +-------------------------+
