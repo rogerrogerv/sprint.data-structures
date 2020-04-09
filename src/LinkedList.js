@@ -16,7 +16,7 @@ class LinkedList {
     if (this.head === undefined) {
       this.head = box;
       this.tail = this.head;
-    }
+    } else this.tail.next = box;
 
     return (this.tail = box);
   }
@@ -29,22 +29,18 @@ class LinkedList {
 
   findNode(value) {
     let currentBox = this.head;
-    console.log(currentBox, "------------------------------");
-    /*returns first node that has a value matching what was passed in and
-    returns null when no value is found*/
-    //need a while loop
-    //check if value, if no value then return null
-
-    while (currentBox) {
-      if (currentBox.value === value) {
-        console.log(currentBox, "AAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-        return currentBox;
-      } else {
-        console.log("wwwwwwwwwwwwwwwwwwwww");
-        currentBox = currentBox.next;
-      }
-    }
-    return null;
+    // while (currentBox) {
+    //   if (currentBox.value === value) {
+    //     return currentBox;
+    //   } else currentBox = currentBox.next;
+    // }
+    // return null;
+    const findValue = (value, currentBox) => {
+      if (currentBox === null) return null;
+      if (currentBox.value === value) return currentBox;
+      return findValue(value, currentBox.next);
+    };
+    return findValue(value, currentBox);
   }
 
   /*
@@ -59,13 +55,35 @@ requirements for ALL data structures in this exercise.
 
   forEach(callback) {}
 
-  print() {}
+  print() {
+    let currentBox = this.head;
+    let stringOut = "";
+    while (currentBox) {
+      stringOut += currentBox.value + ", ";
+      currentBox = currentBox.next;
+    }
+    stringOut = stringOut.slice(0, -2);
+    return stringOut;
+  }
 
-  insertHead(value) {}
+  insertHead(value) {
+    let newHead = new Node(value);
+    let oldHead = this.head;
+    newHead.next = oldHead;
+    return (this.head = newHead);
+  }
 
   insertAfter(refNode, value) {}
 
-  removeAfter(refNode) {}
+  removeAfter(refNode) {
+    if (!refNode) {
+      return this.head;
+    }
+    let currentBox = this.findNode(refNode);
+    let removedBox = currentBox.next;
+    currentBox.next = removedBox.next;
+    return currentBox;
+  }
 }
 
 module.exports = LinkedList;
