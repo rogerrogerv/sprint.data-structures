@@ -4,9 +4,45 @@ class Tree {
     this.children = [];
   }
 
-  addChild(value) {}
+  addChild(value) {
+    //adds a child to tree/subtree and returns the new child node
+    //(which should be a tree instance)
+    const newChild = new Tree(value);
+    this.children.push(newChild);
+    return newChild;
+  }
 
-  contains(value) {}
+  contains(value) {
+    let result = false;
+    let childValue;
+    const findValue = (thisNode) => {
+      if (thisNode.value === value) {
+        result = true;
+        childValue = thisNode;
+      } else {
+        thisNode.children.forEach(function(child) {
+          findValue(child);
+        });
+      }
+    };
+
+    findValue(this); //<--- starter
+
+    return result;
+  }
+
+  remove(value) {
+    /*removes the value from tree and returns the removed value. 
+    You may need to write tests for this.*/
+
+    //search tree for value
+    let result = this.contains(value);
+    console.log(answer, "--------ANSWER!!------------");
+    // found value
+    // remove value and all branches below it
+
+    return result.value;
+  }
 
   /*
 +-------------------------+
@@ -31,3 +67,4 @@ requirements for ALL data structures in this exercise.
 |X                               X
 |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 */
+module.exports = Tree;
