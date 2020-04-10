@@ -40,7 +40,7 @@ describe("Trees", () => {
     });
   });
 
-  describe.only("The contains method", () => {
+  describe("The contains method", () => {
     it("should exist on the Tree prototype", () => {
       expect(Tree.prototype.contains).to.exist;
     });
@@ -64,6 +64,20 @@ describe("Trees", () => {
       tree.children[1].addChild(5);
       expect(tree.contains(4)).to.equal(true);
       expect(tree.contains(5)).to.equal(true);
+    });
+
+    describe.only("The remove method", () => {
+      it("should exist on the Tree prototype", () => {
+        expect(Tree.prototype.remove).to.exist;
+      });
+
+      it("should remove value from the tree and returns the removed value", () => {
+        tree.addChild(1);
+        tree.addChild(2);
+        let removed = tree.remove(2);
+        expect(removed).to.equal(2);
+        expect(tree.contains(2)).to.equal(false);
+      });
     });
   });
 

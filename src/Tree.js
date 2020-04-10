@@ -14,9 +14,11 @@ class Tree {
 
   contains(value) {
     let result = false;
+    let childValue;
     const findValue = (thisNode) => {
       if (thisNode.value === value) {
         result = true;
+        childValue = thisNode;
       } else {
         thisNode.children.forEach(function(child) {
           findValue(child);
@@ -27,6 +29,19 @@ class Tree {
     findValue(this); //<--- starter
 
     return result;
+  }
+
+  remove(value) {
+    /*removes the value from tree and returns the removed value. 
+    You may need to write tests for this.*/
+
+    //search tree for value
+    let result = this.contains(value);
+    console.log(answer, "--------ANSWER!!------------");
+    // found value
+    // remove value and all branches below it
+
+    return result.value;
   }
 
   /*
