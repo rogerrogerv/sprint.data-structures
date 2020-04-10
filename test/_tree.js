@@ -34,17 +34,21 @@ describe("Trees", () => {
     it("should be able to add a child to a tree's child", () => {
       tree.addChild(2);
       tree.children[0].addChild(3);
+      tree.children[0].children[0].addChild(5);
       expect(tree.children[0].children[0].value).to.equal(3);
+      expect(tree.children[0].children[0].children[0].value).to.equal(5);
     });
   });
 
-  describe("The contains method", () => {
+  describe.only("The contains method", () => {
     it("should exist on the Tree prototype", () => {
       expect(Tree.prototype.contains).to.exist;
     });
 
     it("should return true if a value exists", () => {
+      tree.addChild(1);
       tree.addChild(2);
+      expect(tree.contains(1)).to.equal(true);
       expect(tree.contains(2)).to.equal(true);
     });
 
