@@ -16,13 +16,7 @@ class LinkedList {
     if (this.head === undefined) {
       this.head = box;
       this.tail = this.head;
-<<<<<<< HEAD
     } else this.tail.next = box;
-=======
-    } else {
-      this.tail.next = box;
-    }
->>>>>>> d2ea02def79f8dd98393506308bd8f4c8d1891a3
 
     return (this.tail = box);
   }
@@ -35,7 +29,6 @@ class LinkedList {
 
   findNode(value) {
     let currentBox = this.head;
-<<<<<<< HEAD
     // while (currentBox) {
     //   if (currentBox.value === value) {
     //     return currentBox;
@@ -48,21 +41,6 @@ class LinkedList {
       return findValue(value, currentBox.next);
     };
     return findValue(value, currentBox);
-=======
-    /*returns first node that has a value matching what was passed in and
-    returns null when no value is found*/
-    //need a while loop
-    //check if value, if no value then return null
-
-    while (currentBox) {
-      if (currentBox.value === value) {
-        return currentBox;
-      } else {
-        currentBox = currentBox.next;
-      }
-    }
-    return null;
->>>>>>> d2ea02def79f8dd98393506308bd8f4c8d1891a3
   }
 
   /*

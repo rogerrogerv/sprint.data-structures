@@ -5,7 +5,7 @@ const { isClass } = require("./utilities");
 const Tree = require("../src/Tree");
 
 let tree;
-describe("Trees", () => {
+describe.only("Trees", () => {
   beforeEach(() => {
     tree = new Tree(1);
   });
@@ -66,7 +66,7 @@ describe("Trees", () => {
       expect(tree.contains(5)).to.equal(true);
     });
 
-    describe.only("The remove method", () => {
+    describe("The remove method", () => {
       it("should exist on the Tree prototype", () => {
         expect(Tree.prototype.remove).to.exist;
       });
