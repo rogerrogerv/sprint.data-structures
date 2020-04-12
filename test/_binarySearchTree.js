@@ -131,7 +131,7 @@ requirements for ALL data structures in this exercise.
 
 Uncomment by removing the 'x'.
 */
-
+  /*
   describe("The traverseBreadthFirst method", () => {
     it("should exist on the Tree prototype", () => {
       expect(BinarySearchTree.prototype.traverseBreadthFirst).to.exist;
@@ -224,4 +224,5 @@ Uncomment by removing the 'x'.
       expect(anotherTree.checkIfBalanced()).to.equal(true);
     });
   });
+  */
 });
