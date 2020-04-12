@@ -38,7 +38,7 @@ class Tree {
 
     //search tree for value
     let result;
-    
+
     const search = (branch) => {
       // found value
       if (branch.value === value) {
@@ -50,8 +50,9 @@ class Tree {
     search(this);
     return result;
   }
+}
 
-  /*
+/*
 +-------------------------+
 | Advanced Requirements!! |
 +-------------------------+
@@ -61,11 +62,12 @@ Do not proceed until you are done with the basic
 requirements for ALL data structures in this exercise.
 
 */
+/*
   traverseDepthFirst(fn) {}
 
   traverseBreadthFirst(fn) {}
 }
-
+*/
 /*
 |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 |X                               X
