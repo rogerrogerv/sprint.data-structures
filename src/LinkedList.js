@@ -42,7 +42,7 @@ class LinkedList {
     };
     return findValue(value, currentBox);
   }
-
+}
   /*
 +-------------------------+
 | Advanced Requirements!! |
@@ -52,7 +52,7 @@ The following are part of the advanced requirements.
 Do not proceed until you are done with the basic
 requirements for ALL data structures in this exercise.
 */
-
+/*
   forEach(callback) {}
 
   print() {
@@ -85,7 +85,7 @@ requirements for ALL data structures in this exercise.
     return currentBox;
   }
 }
-
+*/
 module.exports = LinkedList;
 
 /*
@@ -94,6 +94,6 @@ module.exports = LinkedList;
 |X   Basic Requirements:         X
 |X   What is the time complexity X
 |X   of the above functions?     X
-|X                               X
+|X                   O(n)        X
 |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 */

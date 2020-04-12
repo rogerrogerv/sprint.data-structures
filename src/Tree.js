@@ -14,6 +14,7 @@ class Tree {
 
   contains(value) {
     let result = false;
+    // eslint-disable-next-line no-unused-vars
     let childValue;
     const findValue = (thisNode) => {
       if (thisNode.value === value) {
@@ -36,12 +37,18 @@ class Tree {
     You may need to write tests for this.*/
 
     //search tree for value
-    let result = this.contains(value);
-    console.log(answer, "--------ANSWER!!------------");
-    // found value
-    // remove value and all branches below it
-
-    return result.value;
+    let result;
+    
+    const search = (branch) => {
+      // found value
+      if (branch.value === value) {
+        result = value;
+        // remove value and all branches below it
+        value = undefined;
+      }
+    };
+    search(this);
+    return result;
   }
 
   /*
@@ -64,7 +71,7 @@ requirements for ALL data structures in this exercise.
 |X                               X
 |X   What is the time complexity X
 |X   of the above functions?     X
-|X                               X
+|X                  O(n2)        X
 |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 */
 module.exports = Tree;

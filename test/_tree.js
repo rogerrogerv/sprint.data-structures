@@ -5,7 +5,7 @@ const { isClass } = require("./utilities");
 const Tree = require("../src/Tree");
 
 let tree;
-describe.only("Trees", () => {
+describe("Trees", () => {
   beforeEach(() => {
     tree = new Tree(1);
   });
@@ -65,23 +65,24 @@ describe.only("Trees", () => {
       expect(tree.contains(4)).to.equal(true);
       expect(tree.contains(5)).to.equal(true);
     });
-
-    describe("The remove method", () => {
-      it("should exist on the Tree prototype", () => {
-        expect(Tree.prototype.remove).to.exist;
-      });
-
-      it("should remove value from the tree and returns the removed value", () => {
-        tree.addChild(1);
-        tree.addChild(2);
-        let removed = tree.remove(2);
-        expect(removed).to.equal(2);
-        expect(tree.contains(2)).to.equal(false);
-      });
-    });
   });
 
-  /*
+  describe("The remove method", () => {
+    it("should exist on the Tree prototype", () => {
+      expect(Tree.prototype.remove).to.exist;
+    });
+
+    it("should remove value from the tree and returns the removed value", () => {
+      tree.addChild(1);
+      tree.addChild(2);
+      let removed = tree.remove(2);
+      expect(removed).to.equal(2);
+      expect(tree.contains(2)).to.equal(false);
+    });
+  });
+});
+
+/*
 +-------------------------+
 | Advanced Requirements!! |
 +-------------------------+
@@ -91,7 +92,7 @@ Do not proceed until you are done with the basic
 requirements for ALL data structures in this exercise.
 
 Uncomment by removing the 'x'.
-*/
+
 
   xdescribe("The traverseDepthFirst method", () => {
     it("should exist on the Tree prototype", () => {
@@ -137,3 +138,4 @@ Uncomment by removing the 'x'.
     });
   });
 });
+*/

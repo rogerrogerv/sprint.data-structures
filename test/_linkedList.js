@@ -108,7 +108,8 @@ describe("Linked Lists", () => {
       expect(linkedList.findNode(20)).to.equal(null);
     });
   });
-  /*
+});
+/*
 +-------------------------+
 | Advanced Requirements!! |
 +-------------------------+
@@ -118,7 +119,7 @@ Do not proceed until you are done with the basic
 requirements for ALL data structures in this exercise.
 
 Uncomment by removing the 'x'.
-*/
+
 
   describe("The forEach method", () => {
     it("should exist on the LinkedList prototype", () => {
@@ -242,3 +243,4 @@ Uncomment by removing the 'x'.
     });
   });
 });
+*/
