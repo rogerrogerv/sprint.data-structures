@@ -60,7 +60,7 @@ class BinarySearchTree {
     return result;
   }
 
-  traverseDepthFirstInOrder (callback){
+  traverseDepthFirstInOrder(callback) {
     //left branch, root, right branch
     function callbackFunc(value) {
       if (value.left) {
