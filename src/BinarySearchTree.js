@@ -55,13 +55,27 @@ class BinarySearchTree {
         return result;
       }
     };
-    
+
     finder(this, value);
     return result;
   }
 
   traverseDepthFirstInOrder (callback){
-    return;
+    //left branch, root, right branch
+    function callbackFunc(value) {
+      if (value.left) {
+        callbackFunc(value.left);
+      }
+
+      callback(value);
+
+      if (value.right) {
+        callbackFunc(value.right);
+      }
+    }
+
+    callbackFunc(this);
+    return undefined;
   }
 }
 
