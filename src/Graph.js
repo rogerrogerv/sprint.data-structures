@@ -22,8 +22,14 @@ class Graph {
     return undefined;
   }
 
-  contains() {
-
+  contains(value) {
+    let isFound = false;
+    if (this.nodes[value]) {
+      isFound = true;
+    } else {
+      return false;
+    }
+    return isFound;
   }
 
   addEdge() {
