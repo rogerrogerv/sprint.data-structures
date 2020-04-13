@@ -30,8 +30,11 @@ class Graph {
 
   }
 
-  removeEdge() {
-
+  removeEdge(value1, value2) {
+    this.nodes[value1] = this.nodes[value1].filter((value) => value !== value2);
+    //keep everything that is NOT value2
+    this.nodes[value2] = this.nodes[value2].filter((value) => value !== value1);
+    return undefined;
   }
 
   hasEdge() {
