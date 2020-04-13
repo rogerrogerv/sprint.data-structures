@@ -31,6 +31,15 @@ class BinarySearchTree {
     addValue(this, newTree);
     return this;
   }
+
+  contains(value) {
+
+    return;
+  }
+
+  traverseDepthFirstInOrder (callback){
+    return;
+  }
 }
 
 /*
