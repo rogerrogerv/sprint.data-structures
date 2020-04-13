@@ -32,8 +32,20 @@ class Graph {
     return isFound;
   }
 
-  addEdge() {
+  addEdge(value1, value2) {
+    if (this.nodes[value1] && this.nodes[value2]) {
+      if (
+        !this.nodes[value1].includes(value2) &&
+        !this.nodes[value2].includes(value1)
+      ) {
+        this.nodes[value1].push(value2);
+        this.nodes[value2].push(value1);
+      }
+    } else {
+      return "Invalid node value";
+    }
 
+    return undefined;
   }
 
   removeEdge(value1, value2) {
