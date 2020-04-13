@@ -17,3 +17,5 @@ class Graph {
 |X                               X
 |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 */
+
+module.exports = Graph;

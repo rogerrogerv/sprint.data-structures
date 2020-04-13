@@ -1,1 +1,5 @@
-class Heap {}
+class Heap {
+  constructor() {}
+}
+
+module.exports = Heap;
