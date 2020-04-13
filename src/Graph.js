@@ -55,8 +55,17 @@ class Graph {
     return undefined;
   }
 
-  hasEdge() {
-
+  hasEdge(value1, value2) {
+    let isFound = false;
+    if (
+      this.nodes[value1].includes(value2) &&
+      this.nodes[value2].includes(value1)
+    ) {
+      isFound = true;
+    } else {
+      return false;
+    }
+    return isFound;
   }
 }
 
@@ -65,7 +74,7 @@ class Graph {
 |X                               X
 |X   What is the time complexity X
 |X   of the above functions?     X
-|X                               X
+|X                      O(n)     X
 |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 */
 
