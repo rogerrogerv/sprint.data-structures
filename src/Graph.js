@@ -8,12 +8,18 @@ class Graph {
     this.nodes = {}; // Adjacency List
   }
 
-  addNode() {
-
+  addNode(value) {
+    this.nodes[value] = [];
+    return undefined;
   }
 
-  removeNode() {
-
+  removeNode(value) {
+    while (this.nodes[value].length) {
+      let value2 = this.nodes[value].pop();
+      this.removeEdge(value, value2);
+    }
+    delete this.nodes[value];
+    return undefined;
   }
 
   contains() {
