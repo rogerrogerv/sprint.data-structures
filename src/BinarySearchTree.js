@@ -33,8 +33,31 @@ class BinarySearchTree {
   }
 
   contains(value) {
+    let result = false;
+    let finder = (item, searchedItem) => {
+      if (item.value === searchedItem) {
+        result = true;
+        return;
+      }
+      //go left
+      if (searchedItem < item.value) {
+        if (item.left) {
+          finder(item.left, searchedItem);
+        }
+        return result;
+      }
 
-    return;
+      if (searchedItem > item.value) {
+        //go right
+        if (item.right) {
+          finder(item.right, searchedItem);
+        }
+        return result;
+      }
+    };
+    
+    finder(this, value);
+    return result;
   }
 
   traverseDepthFirstInOrder (callback){
